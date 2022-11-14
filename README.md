@@ -1,2 +1,2 @@
 # CS 50 Final Project
-By Jackson Moody 
+By Abhay Duggirala, Minkai Li, and Jackson Moody
