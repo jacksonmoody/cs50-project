@@ -3,8 +3,10 @@ import requests
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
-    response = requests.get("https://cs50-project-backend.herokuapp.com/")
-    response = response.json()
-    return render_template("index.html", response=response["message"])
+    if request.method == "POST":
+        response = requests.get("https://cs50-project-backend.herokuapp.com/")
+        response = response.json()
+        return render_template("results.html", response=response["message"])
+    return render_template("index.html")

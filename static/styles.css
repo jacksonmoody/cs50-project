@@ -1,0 +1,44 @@
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+#homebutton {
+    background-color: transparent;
+    border: 8px solid #0077b6;
+    border-radius: 40px;
+    color: white;
+    font-size : 25px;
+    font-weight: bold;
+    position: relative;
+    transition-duration: 0.5s;
+    width: fit-content;
+    padding: 10px 20px;
+}
+
+#homebutton:hover {
+    background-color: #0077b6;
+}
+
+.home-content {
+    color: white;
+    font-size: 50px;
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#home-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    z-index:0;
+    top: 0;
+    left: 0;
+    -o-filter: blur(8px);
+    filter: blur(8px);
+    transform: scale(1.04);
+}
