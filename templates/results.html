@@ -5,21 +5,33 @@
 
 {% block body %}
 <div class="result">
-    <a class="title" href={{ response["url"] }}>{{ response["title"] }}</a>
-    
-    <a href={{ response["url"] }}><img id = "result-image" src={{ response["image"] }} alt={{ response["title"] }}></a>
-    
-    <div class="description">
-        {{ response["description"] }}
-    </div>
-
-    <a href={{ response["url"] }}>
-        <button id="standardbutton">Go to Article</button>
-    </a>
-
-    <form action="/" method="post">
-        <button type="submit" id = "standardbutton">Find Something Else</button>
-    </form>
+    <table>
+        <tr>
+          <td colspan="2" id = "title-row">
+            <a class="title" href={{ response["url"] }} target="_blank">{{ response["title"] }}</a>
+          </td>
+          <td>
+        </tr>
+        <tr>
+          <td id = "image-column">
+            <a href={{ response["url"] }} target="_blank"><img id = "result-image" src={{ response["image"] }} alt={{ response["title"] }}></a>
+          </td>
+          <td id = "description-column">
+            <div class="description">
+                {{ response["description"] }}
+            </div>
+            <a href={{ response["url"] }} target="_blank">
+                <button id="standardbutton">Go to Article</button>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2" id = "footer-row">
+            <form action="/" method="post">
+                <button type="submit" id = "standardbutton">Find Something Else</button>
+            </form>
+          </td>
+      </table>
 
 </div>
 

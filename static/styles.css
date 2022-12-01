@@ -77,9 +77,6 @@ button:hover {
 }
 
 #result-image {
-    float: left;
-    margin-top: 80px;
-    margin-right: 100px;
     max-height: 300px;
     max-width: 440px;
 }
@@ -92,9 +89,35 @@ button:hover {
 }
 
 .description {
-    margin-top: 80px;
-    margin-bottom: 20px;
     font-size: 25px;
     font-style: italic;
     text-align: left;
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.error {
+    margin-top: 20%;
+    color: black;
+    font-size: 40px;
+    font-style: bold;
+    text-align: center;
+}
+
+#title-row {
+    padding-bottom: 50px;
+}
+
+#image-column {
+    width: 50%;
+    vertical-align: top;
+}
+
+#description-column {
+    width: 50%;
+    vertical-align: middle;
+}
+
+#footer-row {
+    padding: 50px;
 }
