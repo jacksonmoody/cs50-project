@@ -2,11 +2,21 @@
     font-family: "Poppins", sans-serif;
 }
 
-#homebutton {
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+button {
     background-color: transparent;
     border: 8px solid #0077b6;
     border-radius: 40px;
-    color: white;
     font-size : 25px;
     font-weight: bold;
     position: relative;
@@ -15,8 +25,21 @@
     padding: 10px 20px;
 }
 
-#homebutton:hover {
+button:hover {
     background-color: #0077b6;
+}
+
+#standardbutton:hover {
+    color: white;
+}
+
+#homebutton {
+    color: white;
+}
+
+#standardbutton {
+    color: black;
+    margin-bottom: 20px;
 }
 
 .home-content {
@@ -44,20 +67,34 @@
 }
 
 .result {
-    color: white;
+    color: black;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: center;
     justify-content: center;
-    margin-left: 10%;
-    margin-right: 10%;
     z-index: 1;
 }
 
+#result-image {
+    float: left;
+    margin-top: 80px;
+    margin-right: 100px;
+    max-height: 300px;
+    max-width: 440px;
+}
+
 .title {
+    color: black;
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
 }
 
 .description {
+    margin-top: 80px;
+    margin-bottom: 20px;
     font-size: 25px;
     font-style: italic;
+    text-align: left;
 }

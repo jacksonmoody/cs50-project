@@ -6,15 +6,21 @@
 {% block body %}
 <div class="result">
     <a class="title" href={{ response["url"] }}>{{ response["title"] }}</a>
-    <br>
-        <img src={{ response["thumbnail"] }} alt={{ response["title"] }}>
+    
+    <a href={{ response["url"] }}><img id = "result-image" src={{ response["image"] }} alt={{ response["title"] }}></a>
+    
     <div class="description">
         {{ response["description"] }}
     </div>
 
     <a href={{ response["url"] }}>
-        <button id=homebutton>Go to Article</button>
+        <button id="standardbutton">Go to Article</button>
     </a>
+
+    <form action="/" method="post">
+        <button type="submit" id = "standardbutton">Find Something Else</button>
+    </form>
+
 </div>
 
 {% endblock %}
