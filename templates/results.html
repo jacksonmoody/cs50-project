@@ -8,23 +8,61 @@
     <table>
         <tr>
           <td colspan="2" id = "title-row">
-            <a class="title" href={{ response["url"] }} target="_blank">{{ response["title"] }}</a>
+            <a class="title" href={{ nyt_response["url"] }} target="_blank">{{ nyt_response["title"] }}</a>
           </td>
           <td>
         </tr>
         <tr>
           <td id = "image-column">
-            <a href={{ response["url"] }} target="_blank"><img id = "result-image" src={{ response["image"] }} alt={{ response["title"] }}></a>
+            <a href={{ nyt_response["url"] }} target="_blank"><img id = "result-image" src={{ nyt_response["image"] }} alt={{ nyt_response["title"] }}></a>
           </td>
           <td id = "description-column">
             <div class="description">
-                {{ response["description"] }}
+                {{ nyt_response["description"] }}
             </div>
-            <a href={{ response["url"] }} target="_blank">
+            <a href={{ nyt_response["url"] }} target="_blank">
                 <button id="standardbutton">Go to Article</button>
             </a>
           </td>
         </tr>
+        
+        <tr>
+          <td colspan="2" id = "title-row">
+            <a class="title" href={{ wiki_response["link"] }} target="_blank">{{ wiki_response["title"] }}</a>
+          </td>
+          <td>
+        </tr>
+        <tr>
+          <td id = "image-column">
+            <a href={{ wiki_response["link"] }} target="_blank"><img id = "result-image" src={{ wiki_response["image"] }} alt={{ wiki_response["title"] }}></a>
+          </td>
+          <td id = "description-column">
+            <a href={{ wiki_response["link"] }} target="_blank">
+                <button id="standardbutton">Go to Article</button>
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td colspan="2" id = "title-row">
+            <a class="title" href={{ youtube_response["url"] }} target="_blank">{{ youtube_response["title"] }}</a>
+          </td>
+          <td>
+        </tr>
+        <tr>
+          <td id = "image-column">
+            <iframe width = "560" height = "315" src = {{ youtube_response["url"] }} title = "Video" frameborder = "0" allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </td>
+          <td id = "description-column">
+            <div class="description">
+                {{ youtube_response["description"] }}
+            </div>
+            <a href={{ youtube_response["url"] }} target="_blank">
+                <button id="standardbutton">Go to Video</button>
+            </a>
+          </td>
+        </tr>
+
         <tr>
           <td colspan = "2" id = "footer-row">
             <form action="/" method="post">
