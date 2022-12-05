@@ -195,3 +195,7 @@ def api():
         "youtube_api": youtube_result, 
         "wiki_api": wiki_result
     })  
+# Two things to do: 
+    # Fix apostrophes and such on the title
+    # Fix margins
+    # Plug in back and frontend for category support
