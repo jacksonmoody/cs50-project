@@ -4,7 +4,12 @@
 {% endblock %}
 
 {% block body %}
-<div class="result">
+
+<div class = "header-image">
+    <h1> {{category}} </h1>
+</div>
+
+<div class="result" id = "result">
     <table>
         <tr>
           <td colspan="2" id = "title-row">
@@ -66,11 +71,28 @@
         <tr>
           <td colspan = "2" id = "footer-row">
             <form action="/" method="post">
+              <select name = "category" style = "display: none;">
+                <option selected value = {{ category }}></option>
+              </select>
                 <button type="submit" id = "standardbutton">Find Something Else</button>
             </form>
           </td>
       </table>
 
 </div>
+
+<script>
+  let bg = document.getElementById("result");
+  let background_image = "{{ background_image }}";
+
+  function setBackground() {
+    console.log("Changing background image")
+    console.log(background_image)
+    bg.style.setProperty('--background-image', url(background_image));
+  }
+
+  Window.onload = setBackground();
+
+  </script>
 
 {% endblock %}
