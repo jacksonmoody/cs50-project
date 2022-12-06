@@ -1,4 +1,4 @@
-# CS 50 Final Project
+# CS 50 Final Project: The Random Interesting Thing Generator
 By Abhay Duggirala, Minkai Li, and Jackson Moody
 
 ## Youtube Video Link
