@@ -53,6 +53,6 @@ Finally, a few things to keep in mind are as follows:
 
 When specific interesting things that come up do not fit with the category, have an image that is poor, or might be in a different language, this is generally the fault of the API we are using. There are YouTube videos that are miscategorized by region/language as well as topic as well as some New York Times Articles that are miscategorized by topic. 
 
-Our YouTube API has the search filter “videoSyndicated=true” meaning that all of our videos should theoretically be able to be played outside of youtube.com. However, this is not always the case because of issues on YouTube’s end and thus there are some moments where a video is unplayable on our website and must be played on youtube.com still.
+Our YouTube API has the search filter `videoSyndicated=true` meaning that all of our videos should theoretically be able to be played outside of youtube.com. However, this is not always the case because of issues on YouTube’s end and thus there are some moments where a video is unplayable on our website and must be played on youtube.com still.
 
 
