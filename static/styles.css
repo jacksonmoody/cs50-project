@@ -33,9 +33,11 @@ button:hover {
     color: white;
 }
 
-#footer-button:hover {
+#footerbutton:hover {
     color: white;
 }
+
+
 
 #advancedbutton:hover {
     color: black;
@@ -159,10 +161,10 @@ button:hover {
     text-align: center;
 }
 
-#footer-button {
-    float: right;
-    margin-left: 28%;
-    margin-right: 5%;
+#footerbutton {
+    float: left;
+    margin-left: 20%;
+    margin-right: 10px;
 }
 
 #advanced-form {

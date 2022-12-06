@@ -18,7 +18,7 @@ def index():
         advanced = request.form.get("advanced")
 
         if category == None or category == "" or advanced == "False":
-            category_list = ['sports', 'technology', 'business', 'entertainment', 'science', 'politics']
+            category_list = ['sports', 'technology', 'entertainment', 'science', 'politics']
             category = random.choice(category_list)
 
         match category:
@@ -26,8 +26,6 @@ def index():
                 background_image = "/static/images/sports.jpeg"
             case "technology":
                 background_image = "/static/images/technology.jpeg"
-            case "business":
-                background_image = "/static/images/business.jpg"
             case "entertainment":
                 background_image = "/static/images/entertainment.jpeg"
             case "science":
