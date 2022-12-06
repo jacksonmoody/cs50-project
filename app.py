@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 BACKEND_URL = "https://cs50-project-backend.herokuapp.com/"
 
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     # We need to declare advanced here to future use, so we set it equal to nothing to begin with.
@@ -65,9 +66,12 @@ def index():
     return render_template("index.html")
 
 # We bring up error pages for 404 and 500 errors that may come up when running the program.
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html'), 404
+
 
 @app.errorhandler(500)
 def application_error(e):
