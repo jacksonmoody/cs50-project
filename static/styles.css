@@ -158,6 +158,7 @@ button:hover {
 }
 
 #footer-row {
+    margin-top: 50px;
     text-align: center;
 }
 
@@ -182,4 +183,10 @@ select {
 
 hr {
     margin-top: 50px;
+}
+
+.category-text {
+    font-weight: 2em;
+    color: black;
+    background-color:#FFFF00;
 }
