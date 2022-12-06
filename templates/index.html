@@ -24,6 +24,7 @@
             <option value="science">Science</option>
             <option value="politics">Politics</option>
         </select>
+        <!-- We have a hidden check that tells the app.py function that they submitted the advanced form  -->
         <input hidden checked name="advanced" type="checkbox" value="True">
         <button type="submit" id = "advancedbutton">Search</button>
     </form>
@@ -35,6 +36,7 @@
 </video>
 
 <script>
+    // Show advanced search options when they click the advanced form button
     function showsearch() {
         let x = document.getElementById('advanced-form');
         if (x.style.display == 'block') {
