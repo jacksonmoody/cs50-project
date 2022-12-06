@@ -27,7 +27,7 @@ The reason we did everything on a backend using Heroku was for speed and to save
 
 Finally, on the backend, we return a JSON file to the frontend when it is requested. We then use APScheduler to run the function after every specified interval of 10 minutes so we are constantly refreshing/randomizing the articles/videos on the backend without any input from the user.
 
-## Frontend:
+## Frontend
 
 We primarily used Flask, Python, HTML, and CSS to run the frontend of our website. The way we set this up was fairly similar to CS50 Finance where we had an app.py file that ran our code, Jinja in our HTML code that allowed us to pass in data from the backend, and CSS/HTML to style and build our website. We have error pages for 404 and 500 errors which were helpful when we debugged and when there are errors in the website. 
 
@@ -35,7 +35,7 @@ The app.py file essentially works as follows. First, we check if the user submit
 
 To implement our advanced search functionality, we also store the status of the category and advanced variables in the same function. Advanced is a boolean variable that indicates whether or not the user specified a category or if a category needs to be randomly chosen. If it is True, then the user already specified a category which is stored. However, if it is False, then the program randomly selects a category for the user. Both of these variables are sent in the post requests from either the homepage or the results page—thereby ensuring that users who specified a category via the advanced search continue searching that category when they click “next” on the results page and that users who did not are shown a random category each time when they click “next.”
 
-## Mobile Design Caveat:
+## Mobile Design Caveat
 
 We unfortunately realized too late that our website was not optimized for mobile devices. While the site already has the viewport set to the device width to control  the scaling of the website on different devices, we could make further improvements (if given more time) to rescale and restructure certain HTML and CSS elements. 
 
