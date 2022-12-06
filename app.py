@@ -4,31 +4,38 @@ import random
 
 app = Flask(__name__)
 
+advanced = "False"
+
 @app.route("/", methods=["GET", "POST"])
 def index():
+    global advanced
+
+    print(advanced)
+
     if request.method == "POST":
 
         category = request.form.get("category")
+        advanced = request.form.get("advanced")
 
-        if category == None or category == "":
-            category_list = ['sports', 'art', 'technology', 'business', 'entertainment', 'science', 'health', 'politics']
+        if category == None or category == "" or advanced == "False":
+            category_list = ['sports', 'art', 'technology', 'business', 'entertainment', 'science', 'politics']
             category = random.choice(category_list)
 
         match category:
             case "sports":
-                background_image = "https://thumbs.dreamstime.com/b/sports-seamless-pattern-25616314.jpg"
+                background_image = "/static/images/sports.jpeg"
             case "art":
-                background_image = "https://img.freepik.com/premium-vector/vector-black-white-floral-seamless-pattern-hand-drawn-line-simple-trendy-illustration-with-flowers-leaves-bohemian-repeating-background-with-plants-boho-digital-paper-coloring-pagexa_150240-2514.jpg?w=2000"
+                background_image = "/static/images/art.jpg"
             case "technology":
-                background_image = "https://thumbs.dreamstime.com/b/vector-technology-pattern-technology-seamless-background-vector-technology-pattern-technology-seamless-background-vector-123145077.jpg"
+                background_image = "/static/images/technology.jpeg"
             case "business":
-                background_image = "https://img.freepik.com/premium-vector/business-themed-seamless-background_6997-976.jpg"
+                background_image = "/static/images/business.jpg"
             case "entertainment":
-                background_image = "https://media.istockphoto.com/id/968278390/vector/arts-and-entertainment-seamless-background.jpg?s=612x612&w=0&k=20&c=2JwZcif0eDzkf98N8TaBdS9s_dNqbRsgS_rdFnH9oNI="
+                background_image = "/static/images/entertainment.jpeg"
             case "science":
-                backbround_image = "https://www.philipgordts.com/wp-content/uploads/2018/03/seamless-science-background-vector-3740137.jpeg"
+                background_image = "/static/images/science.jpeg"
             case "politics":
-                background_image = "https://img.freepik.com/premium-vector/vector-flat-seamless-texture-pattern-democracy-political_51635-1282.jpg"
+                background_image = "/static/images/politics.jpeg"
             case _:
                 background_image = ""
                 # Should never hit this case
@@ -37,17 +44,20 @@ def index():
         response = response.json()
 
         try:
-            nyt_response = response["nyt_api"]
-            wiki_response = response["wiki_api"]
-            youtube_response = response["youtube_api"]
+            nyt_response = response["nyt_api"][category]
+            wiki_response = response["wiki_api"][category]
+            youtube_response = response["youtube_api"][category]
 
             num_nyt = random.randint(0, len(nyt_response) - 1)
             num_wiki = random.randint(0, len(wiki_response) - 1)
             num_yt = random.randint(0, len(youtube_response) - 1)
+            print(response['nyt_api'])
 
-            return render_template("results.html", category=category, background_image=background_image, nyt_response=nyt_response[num_nyt], wiki_response=wiki_response[num_wiki], youtube_response=youtube_response[num_yt])
+            return render_template("results.html", category=category, advanced=advanced, background_image=background_image, nyt_response=nyt_response[num_nyt], wiki_response=wiki_response[num_wiki], youtube_response=youtube_response[num_yt])
        
-        except:
+        except Exception as e:
+            print(e)
+            print(response['nyt_api'])
             return render_template("error.html")
     
     return render_template("index.html")
@@ -58,4 +68,5 @@ def page_not_found(e):
 
 @app.errorhandler(500)
 def application_error(e):
+    print(e)
     return render_template('error.html'), 500

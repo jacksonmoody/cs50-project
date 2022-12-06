@@ -33,6 +33,10 @@ button:hover {
     color: white;
 }
 
+#footer-button:hover {
+    color: white;
+}
+
 #advancedbutton:hover {
     color: black;
     background-color: white;
@@ -80,9 +84,9 @@ button:hover {
 
 .result {
     color: black;
-    margin-top: 10%;
-    margin-left: 20%;
+    margin-top: 5%;
     margin-right: 20%;
+    margin-left: 20%;
     text-align: center;
     justify-content: center;
     z-index: 1;
@@ -132,16 +136,36 @@ button:hover {
 
 .header-image {
     text-align: center;
+    position: relative;
     width: 100%;
-    background-image: var(--background-image);
-    background-repeat: repeat;
+    height: 200px;
+    object-fit: cover;
+}
+
+.header-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
 }
 
 #footer-row {
-    padding: 50px;
+    text-align: center;
 }
 
-#advanced {
+#footer-button {
+    float: right;
+    margin-left: 28%;
+    margin-right: 5%;
+}
+
+#advanced-form {
     margin-top: 10px;
     display: none;
 }
@@ -154,6 +178,6 @@ select {
     line-height: 3.5em;
 }
 
-:root {
-    --background-image: "https://www.publicdomainpictures.net/pictures/30000/t2/plain-white-background.jpg";
-  }
+hr {
+    margin-top: 50px;
+}

@@ -9,12 +9,13 @@
 <div class="home-content">
     <h1>Welcome to the Random Interesting Things Generator!</h1>
     <form action="/" method="post">
+        <input hidden checked name="advanced" type="checkbox" value="False">
         <button type="submit" id = "homebutton">Find Something Interesting</button>
     </form>
 
     <button onclick="showsearch()" id = "advancedbutton">Show Advanced Search ⬇️</button>
 
-    <form action="/" method="post" id = "advanced">
+    <form action="/" method="post" id = "advanced-form">
         <select name = "category" required>
             <option value="">Select Category</option>
             <option value="sports">Sports</option>
@@ -25,6 +26,7 @@
             <option value="science">Science</option>
             <option value="politics">Politics</option>
         </select>
+        <input hidden checked name="advanced" type="checkbox" value="True">
         <button type="submit" id = "advancedbutton">Search</button>
     </form>
 </div>
@@ -36,7 +38,7 @@
 
 <script>
     function showsearch() {
-        let x = document.getElementById('advanced');
+        let x = document.getElementById('advanced-form');
         if (x.style.display == 'block') {
             x.style.display = 'none';
         } else {

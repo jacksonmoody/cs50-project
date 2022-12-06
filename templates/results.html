@@ -1,14 +1,18 @@
 {% extends "layout.html" %}
 {% block head %}
-    <title>Home</title>
+    <title>Results</title>
 {% endblock %}
 
 {% block body %}
 
 <div class = "header-image">
-    <h1> {{category}} </h1>
+    <img src = {{ background_image }} alt = "background_image">
+    <div class = "header-text">
+      <h1>Random Interesting Things Generator</h1>
+      <h2>Let's learn about {{ category }}!</h2>
+  </div>
+  
 </div>
-
 <div class="result" id = "result">
     <table>
         <tr>
@@ -30,9 +34,9 @@
             </a>
           </td>
         </tr>
-        
         <tr>
           <td colspan="2" id = "title-row">
+            <hr class="dotted">
             <a class="title" href={{ wiki_response["link"] }} target="_blank">{{ wiki_response["title"] }}</a>
           </td>
           <td>
@@ -47,9 +51,9 @@
             </a>
           </td>
         </tr>
-
         <tr>
           <td colspan="2" id = "title-row">
+            <hr class = "dotted">
             <a class="title" href={{ youtube_response["url"] }} target="_blank">{{ youtube_response["title"] }}</a>
           </td>
           <td>
@@ -67,32 +71,20 @@
             </a>
           </td>
         </tr>
-
-        <tr>
-          <td colspan = "2" id = "footer-row">
-            <form action="/" method="post">
-              <select name = "category" style = "display: none;">
-                <option selected value = {{ category }}></option>
-              </select>
-                <button type="submit" id = "standardbutton">Find Something Else</button>
-            </form>
-          </td>
       </table>
-
 </div>
 
-<script>
-  let bg = document.getElementById("result");
-  let background_image = "{{ background_image }}";
-
-  function setBackground() {
-    console.log("Changing background image")
-    console.log(background_image)
-    bg.style.setProperty('--background-image', url(background_image));
-  }
-
-  Window.onload = setBackground();
-
-  </script>
-
+<div id = "footer-row">
+  <a href="/">
+    <button id="footerbutton">⬅️ Return Home</button>
+ </a>
+  <form action="/" method="post">
+    <select name = "category" style = "display: none;">
+    <option selected value = {{ category }}></option>
+  </select>
+    <input hidden checked name="advanced" type="checkbox" value={{ advanced }}>
+    <button type="submit" id = "standardbutton">Find Something Else</button>
+</form>
+<p>Created by Abhay Duggirala, Minkai Li, and Jackson Moody</p>
+</div>
 {% endblock %}
